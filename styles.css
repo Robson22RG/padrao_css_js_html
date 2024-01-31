@@ -1,0 +1,67 @@
+/*RESET*/
+:root {
+  --cor-primaria: rgba(52, 87, 42, 0.87);
+  --cor-secundaria: green;
+  --cor-terciaria: gray;
+  --cor-fonte: black;
+  --cor-fonte2: gray;
+  --tam-fontes: 16px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 62.5%;
+}
+
+.faixa {
+  width: 100%;
+}
+
+.bloco {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.fundo_01 {
+  background-color: var(--cor-primaria);
+}
+
+.fundo_02 {
+  background-color: var(--cor-secundaria);
+}
+
+.fundo_03 {
+  background-color: var(--cor-terciaria);
+}
+/*----SETS-----*/
+.centralizador {
+  display: flex;
+  justify-content: center;
+}
+
+.centralizador_dispersivo {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*----Padronizações de tags ------*/
+p,
+a,
+input,
+span,
+textarea {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/*-----Padronizações de tags PAI -----*/
+header {
+  max-height: 300px;
+}
+footer {
+  max-height: 300px;
+}

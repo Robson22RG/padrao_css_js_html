@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="header_bloco-superior fundo_01 centralizador_dispersivo">
+        <div class="header_grupo-logo">
+          <figure>
+            <a href="#">
+              <img src="logo-vitoratto-250x140.png" alt="" />
+            </a>
+          </figure>
+        </div>
+        <!--BLOCO CONTATO--->
+        <div class="header_grupo-contato">
+          <div class="header_redes-sociais">
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+          <div class="header_telefone-contato">
+            <span> <i class="fas fa-phone"></i> (xx) xxxx -xxxx </span>
+          </div>
+        </div>
+      </div>
+      <nav class="centralizador">
+        <ul class="bloco centralizador_dispersivo">
+          <button><a href="">teste1</a></button>
+          <button><a href="">teste2</a></button>
+          <button><a href="">teste3</a></button>
+          <button><a href="">teste4</a></button>
+          <button><a href="">teste5</a></button>
+          <button><a href="">teste6</a></button>
+        </ul>
+      </nav>
+    </header>
+    <!--MAIN-->
+    <main class="fundo_02">
+      <section class="faixa">
+        <h1>Nossa História</h1>
+        <div class="bloco">
+          <div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Repudiandae aspernatur ea quaerat. Ipsam molestias laudantium
+              aliquid assumenda! Natus facere odio nobis laborum, neque, unde
+              recusandae dicta, quas corporis iusto ad.
+            </p>
+          </div>
+        </div>
+        <div class="bloco">
+          <div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Quibusdam animi possimus quo perferendis distinctio ipsam vel
+              nulla nihil? Commodi, inventore. Aliquam repellendus suscipit
+              maxime nemo dolor dolorum error laboriosam corrupti?
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <article>
+      <div class="faixa">
+        <div class="bloco">
+          <h2>Missão</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque,
+            commodi magnam impedit optio labore pariatur ab sed perspiciatis
+            eaque, nisi deserunt amet alias vero numquam assumenda sit quasi
+            explicabo autem.
+          </p>
+        </div>
+      </div>
+    </article>
+    <footer>
+      <div class="faixa">
+        <div class="bloco footer_coluna-1">
+          <nav class="footer_redes-sociais">
+            <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="bloco footer_coluna-2">
+          <span>&copy; 2023 - Projeto Integrador III</span>
+          <p>Horarios:</p>
+          <p>13:00 às 14:00</p>
+        </div>
+        <div class="bloco footer_coluna-3">
+          <form id="form_mini" method="post">
+            <p class="titulo-address">Mensagem:</p>
+            <hr class="amarelo" />
+            <input
+              id="form_mini_nome"
+              type="text"
+              class="form_mini_input"
+              size="50"
+              placeholder=" nome"
+              required=""
+              title=""
+            />
+            <input
+              id="form_mini_email"
+              type="email"
+              class="form_mini_input"
+              size="30"
+              placeholder=" e-mail"
+              required=""
+              title=""
+            />
+            <input
+              id="form_mini_telefone"
+              type="telefone"
+              class="form_mini_input"
+              size="20"
+              placeholder=" telefone"
+              required=""
+            />
+            <textarea
+              id="form_mini_mensagem"
+              name="form_mini_mensagem"
+              class="form_mini_textarea"
+              maxlength="1000"
+              title="Utilize este campo para escrever detalhes sobre o contato!"
+              placeholder="*Mensagem"
+              required=""
+            ></textarea>
+            <input
+              id="form_mini_cadastrar"
+              type="submit"
+              class="form_mini_submit"
+              value="Enviar"
+              onclick="return form_mini_submit(this)"
+              title=""
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
