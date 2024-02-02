@@ -5,15 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/styles.css" />
+    <script async>
+      /*CONTROLE DE ALTURA */
+      /*-----------------*/
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollPosition = window.scrollY;
+
+        const header = document.querySelector("header");
+        const logo = document.querySelector("#header_logo-img");
+
+        window.addEventListener("scroll", () => {
+          const currentScrollPosition = window.scrollY;
+
+          if (
+            currentScrollPosition < lastScrollPosition &&
+            currentScrollPosition > 300 &&
+            screen.width > 900
+          ) {
+            header.classList.add("header_movel");
+            logo.classList.add("header_logo-reduzido");
+            header.classList.remove("header_movel-saindo");
+          } else if (
+            /*animações de transição*/
+            currentScrollPosition > lastScrollPosition &&
+            currentScrollPosition > 300 &&
+            screen.width > 900
+          ) {
+            header.classList.add("header_movel-saindo");
+            setTimeout(() => {
+              header.classList.remove("header_movel");
+              logo.classList.remove("header_logo-reduzido");
+            }, 1990);
+            /*sem movel */
+          } else {
+            header.classList.remove("header_movel");
+            logo.classList.remove("header_logo-reduzido");
+            header.classList.remove("header_movel-saindo");
+          }
+          /*passando valor*/
+          lastScrollPosition = currentScrollPosition;
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- Header -->
-    <header id="header" class="header">
-      <div class="header_bloco-superior fundo_01 centralizador_dispersivo">
-        <div class="header_grupo-logo">
+    <header id="header" class="header header header_movel-voltando">
+      <div class="header_bloco fundo_01 centralizador_dispersivo">
+        <div class="header_logo">
           <figure>
             <a href="#">
-              <img src="logo-vitoratto-250x140.png" alt="" />
+              <img
+                class="header_logo"
+                id="header_logo-img"
+                src="logo-vitoratto-250x140.png"
+                alt="imagem logo"
+              />
             </a>
           </figure>
         </div>
@@ -21,16 +68,16 @@
         <div class="header_grupo-contato">
           <div class="header_redes-sociais">
             <a href="">
-              <i class="fab fa-facebook-f"></i>
+              <i class="fas fa-phone"></i>
             </a>
             <a href="">
-              <i class="fab fa-facebook-f"></i>
+              <i class="fas fa-phone"></i>
             </a>
             <a href="">
-              <i class="fab fa-facebook-f"></i>
+              <i class="fas fa-phone"></i>
             </a>
             <a href="">
-              <i class="fab fa-facebook-f"></i>
+              <i class="fas fa-phone"></i>
             </a>
           </div>
           <div class="header_telefone-contato">
@@ -51,9 +98,9 @@
     </header>
     <!--MAIN-->
     <main class="fundo_02">
-      <section class="faixa">
+      <section>
         <h1>Nossa História</h1>
-        <div class="bloco">
+        <div class="bloco corpo_longo-temporario">
           <div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -63,7 +110,27 @@
             </p>
           </div>
         </div>
-        <div class="bloco">
+        <div class="bloco corpo_longo-temporario">
+          <div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Quibusdam animi possimus quo perferendis distinctio ipsam vel
+              nulla nihil? Commodi, inventore. Aliquam repellendus suscipit
+              maxime nemo dolor dolorum error laboriosam corrupti?
+            </p>
+          </div>
+        </div>
+        <div class="bloco corpo_longo-temporario">
+          <div>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Quibusdam animi possimus quo perferendis distinctio ipsam vel
+              nulla nihil? Commodi, inventore. Aliquam repellendus suscipit
+              maxime nemo dolor dolorum error laboriosam corrupti?
+            </p>
+          </div>
+        </div>
+        <div class="bloco corpo_longo-temporario">
           <div>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

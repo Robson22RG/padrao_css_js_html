@@ -14,10 +14,6 @@
   font-size: 62.5%;
 }
 
-.faixa {
-  width: 100%;
-}
-
 .bloco {
   width: 100%;
   max-width: 1200px;
@@ -45,7 +41,63 @@
   justify-content: space-around;
 }
 
+.imagem_pequena {
+  width: 50px;
+  height: 50px;
+}
+
+/*desenvolvimento float panel */
+/*----------------------------*/
+.corpo_longo-temporario {
+  height: 500px;
+}
+
+.header_movel {
+  position: fixed;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  animation: slideIn 2s;
+}
+
+.header_movel-voltando {
+  animation: slideIn 2s;
+}
+
+.header_movel-saindo {
+  animation: slideOut 2s;
+}
+
+.header_logo img {
+  margin: 20px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.header_logo-reduzido {
+  margin: 10px !important;
+  width: 50% !important;
+}
+
+/*animações de keyframe*/
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+/*---------------------------------*/
 /*----Padronizações de tags ------*/
+/*---------------------------------*/
 p,
 a,
 input,
@@ -57,10 +109,13 @@ textarea {
 h1 {
   font-size: 3rem;
 }
+a {
+  text-decoration: none;
+}
 
 /*-----Padronizações de tags PAI -----*/
 header {
-  max-height: 300px;
+  max-height: 150px;
 }
 footer {
   max-height: 300px;
