@@ -26,6 +26,7 @@
             /* Subiu a tela */
             header.classList.add("header_slide-in");
             header.classList.remove("header_slide-out");
+            logo.classList.add("logo_header-reduzido");
             /*----------*/
           } else if (
             currentScrollPosition > lastScrollPosition &&
@@ -36,9 +37,16 @@
             /* Animações de transição, descendo a tela */
             header.classList.remove("header_slide-in");
             header.classList.add("header_slide-out");
+            logo.classList.add("logo_header-reduzido");
             /*----------*/
+          } else if (currentScrollPosition > 300) {
+            /*situação de ajuste de header para volta */
+            logo.classList.add("logo_header-reduzido");
+            /*------------*/
           } else {
             /* Tela lá em cima */
+            header.classList.remove("header_slide-in");
+            logo.classList.remove("logo_header-reduzido");
             header.classList.remove("header_slide-in");
             /*----------*/
           }
