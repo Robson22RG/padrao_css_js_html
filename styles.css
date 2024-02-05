@@ -51,52 +51,21 @@
 .corpo_longo-temporario {
   height: 500px;
 }
+.header_slide-in {
+  transform: translateY(0);
+  position: fixed;
+  transition: all 0.4s ease-out;
+  width: 100%;
+}
 
-.header_movel {
+.header_slide-out {
+  transform: translateY(-100%);
   position: fixed;
   width: 100%;
-  transition: all 0.4s ease-in-out;
-  animation: slideIn 2s;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
 }
 
-.header_movel-voltando {
-  animation: slideIn 2s;
-}
-
-.header_movel-saindo {
-  animation: slideOutUp 2s;
-}
-
-.header_logo img {
-  margin: 20px;
-  width: 100%;
-  max-width: 200px;
-}
-
-.header_logo-reduzido {
-  margin: 10px !important;
-  width: 50% !important;
-}
-
-/*animações de keyframe*/
-@keyframes slideIn {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes slideOutUp {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    visibility: hidden;
-    transform: translate3d(0, -100%, 0);
-  }
-}
 /*Desenvolvimento slider*/
 /*----------------------*/
 .desenvolvimento_de_efeitos {
@@ -140,6 +109,46 @@
   transition: 1s;
   bottom: 0;
 }
+/*Visibilidade de elementos*/
+/*-------------------------*/
+/*-------------------------*/
+.fundo-vermelho {
+  background: red;
+}
+.isVisible {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.isVisible.visible {
+  opacity: 1;
+}
+/*Banner rotativo*/
+/*---------------------------*/
+/*---------------------------*/
+.carousel-container {
+  position: relative;
+  width: 100%; /* Ajuste conforme necessário */
+  height: 300px; /* Ajuste conforme necessário */
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 2s ease-in-out;
+}
+
+.carousel-panel {
+  width: 100%;
+  height: 300px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: #34992a;
+  color: #fff;
+}
 
 /*---------------------------------*/
 /*----Padronizações de tags ------*/
@@ -152,7 +161,8 @@ textarea {
   font-size: 2rem;
 }
 
-h1 {
+h1,
+button {
   font-size: 3rem;
 }
 a {
@@ -161,7 +171,7 @@ a {
 
 /*-----Padronizações de tags PAI -----*/
 header {
-  max-height: 150px;
+  max-height: 200px;
 }
 footer {
   max-height: 300px;
