@@ -81,6 +81,11 @@
         /*-------------------*/
         const carousel = document.querySelector(".carousel");
         let currentPanelIndex = 0;
+        let intervalId;
+        const nextButton = document.getElementById("nextButton");
+        const prevButton = document.getElementById("prevButton");
+        const autoRotateCheckbox =
+          document.getElementById("autoRotateCheckbox");
 
         function rotatePanels() {
           const comprimentoPainel = carousel.clientWidth;
@@ -101,7 +106,31 @@
           rotatePanels();
         }
 
-        setInterval(nextPanel, 5000);
+        nextButton.addEventListener("click", function () {
+          clearInterval(intervalId);
+          nextPanel();
+          autoRotateCheckbox.checked = false;
+          if (autoRotateCheckbox.checked) {
+            intervalId = setInterval(nextPanel, 5000);
+          }
+        });
+
+        prevButton.addEventListener("click", function () {
+          clearInterval(intervalId);
+          prevPanel();
+          autoRotateCheckbox.checked = false;
+        });
+
+        autoRotateCheckbox.addEventListener("change", function () {
+          if (this.checked) {
+            intervalId = setInterval(nextPanel, 5000);
+          } else {
+            clearInterval(intervalId);
+          }
+        });
+
+        // Iniciar a rotação automática inicialmente
+        intervalId = setInterval(nextPanel, 5000);
       });
     </script>
   </head>
@@ -142,7 +171,7 @@
           </div>
         </div>
       </div>
-      <nav class="centralizador">
+      <nav class="centralizador fundo_03">
         <ul class="bloco centralizador_dispersivo">
           <button><a href="">teste1</a></button>
           <button><a href="">teste2</a></button>
@@ -232,8 +261,9 @@
           <div class="carousel-panel">Banner 12</div>
         </div>
       </div>
-      <button onclick="prevPanel()">Anterior</button>
-      <button onclick="nextPanel()">Próximo</button>
+      <button id="prevButton">Anterior</button>
+      <button id="nextButton">Próximo</button>
+      <input type="checkbox" checked id="autoRotateCheckbox" />
     </section>
 
     <article>

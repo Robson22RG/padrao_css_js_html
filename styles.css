@@ -6,6 +6,8 @@
   --cor-fonte: black;
   --cor-fonte2: gray;
   --tam-fontes: 16px;
+  --altura-header: 150px;
+  --altura-footer: 150px;
 }
 * {
   margin: 0;
@@ -124,9 +126,27 @@
   transition: opacity 2s ease-in-out;
 }
 
-.isVisible.visible {
-  opacity: 1;
-}
+   .isVisible.visible {
+      animation: apareceAumenta 5s;
+      opacity: 1;
+      z-index: 2;
+    }
+
+    @keyframes apareceAumenta {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      75% {
+        transform: scale(1);
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 /*Banner rotativo*/
 /*---------------------------*/
 /*---------------------------*/
@@ -175,8 +195,9 @@ a {
 
 /*-----Padronizações de tags PAI -----*/
 header {
-  max-height: 200px;
+  max-height: var(--altura-header)
+  z-index: 3;
 }
 footer {
-  max-height: 300px;
+  max-height: var(--altura-footer)
 }
