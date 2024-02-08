@@ -1,4 +1,3 @@
-/*RESET*/
 :root {
   --cor-primaria: rgb(134, 134, 134);
   --cor-secundaria: green;
@@ -9,12 +8,16 @@
   --cor-fonte3: rgb(61, 61, 28);
   --tam-fontes: 16px;
 
-  /*header*/
-  /**/
+  /*
+  ====================
+        HEADER
+  ====================
+  */
   --altura-header: 200px;
-  --cor-botao-menu: var(--cor-primaria);
   --cor-header: var(--cor-primaria);
-  /*menu*/
+  /**/
+  --cor-botao-menu: var(--cor-primaria);
+  --comprimento-menu: 600px;
   --altura-menu-header: 3rem;
   --cor-menu-normal: var(--cor-quartenaria);
   --cor-menu-ativo: var(--cor-secundaria);
@@ -22,13 +25,19 @@
   --cor-submenu-normal: var(--cor-primaria);
   --cor-submenu-hover: var(--cor-quartenaria);
 
+  /*
+  ====================
+        FOOTER
+  ====================
+  */
   --altura-footer: 150px;
   --cor-footer: --cor-secundaria;
 }
+
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
   font-size: 62.5%;
 }
 
@@ -53,7 +62,7 @@ ol {
 .fundo_03 {
   background-color: var(--cor-terciaria);
 }
-/*----SETS-----*/
+
 .centralizador {
   display: flex;
   justify-content: center;
@@ -69,18 +78,23 @@ ol {
   height: 50px;
 }
 
-/*desenvolvimento float panel */
-/*----------------------------*/
 .corpo_longo-temporario {
   height: 500px;
 }
+
+/*
+  ====================
+        CSS SCRIPTS
+  ====================
+  */
 .header_slide-in {
-  transform: translateY(0);
+  transform: translateY(0px);
   position: fixed;
-  transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out 0s;
   max-height: 100px;
   width: 100%;
 }
+
 .logo_header-reduzido {
   max-height: 60px;
 }
@@ -89,18 +103,18 @@ ol {
   transform: translateY(-100%);
   position: fixed;
   width: 100%;
-  top: 0;
-  transition: transform 0.4s ease-in-out;
+  top: 0px;
+  transition: transform 0.4s ease-in-out 0s;
+  max-height: 100px;
 }
 
-/*Desenvolvimento slider*/
-/*----------------------*/
 .desenvolvimento_de_efeitos {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -115,12 +129,12 @@ ol {
   width: 100px;
   height: 100px;
   background: blue;
-  transition: 1s;
+  transition: all 1s ease 0s;
 }
 
 .wrapper:hover #slide_direita {
-  transition: 1s;
-  right: 0;
+  transition: all 1s ease 0s;
+  right: 0px;
 }
 
 #slide_baixo {
@@ -129,26 +143,25 @@ ol {
   width: 100px;
   height: 100px;
   background: blue;
-  transition: 1s;
+  transition: all 1s ease 0s;
 }
 
 .wrapper:hover #slide_baixo {
-  transition: 1s;
-  bottom: 0;
+  transition: all 1s ease 0s;
+  bottom: 0px;
 }
-/*Visibilidade de elementos*/
-/*-------------------------*/
-/*-------------------------*/
+
 .fundo-vermelho {
   background: red;
 }
+
 .isVisible {
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out 0s;
 }
 
 .isVisible.visible {
-  animation: apareceAumenta 5s;
+  animation: 5s ease 0s 1 normal none running apareceAumenta;
   opacity: 1;
   z-index: 2;
 }
@@ -157,30 +170,31 @@ ol {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
     transform: scale(1.2);
   }
+
   75% {
     transform: scale(1);
   }
+
   100% {
     opacity: 1;
   }
 }
-/*Banner rotativo*/
-/*---------------------------*/
-/*---------------------------*/
+
 .carousel-container {
   position: relative;
-  width: 100%; /* Ajuste conforme necessário */
-  height: 300px; /* Ajuste conforme necessário */
+  width: 100%;
+  height: 300px;
   overflow: hidden;
 }
 
 .carousel {
   display: flex;
-  transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out 0s;
 }
 
 .carousel-panel {
@@ -191,13 +205,15 @@ ol {
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  background-color: #34992a;
-  color: #fff;
+  background-color: rgb(52, 153, 42);
+  color: rgb(255, 255, 255);
 }
 
-/*---------------------------------*/
-/*----Padronizações de tags ------*/
-/*---------------------------------*/
+/*
+  ====================
+        PADRÃO
+  ====================
+  */
 p,
 a,
 input,
@@ -207,110 +223,115 @@ textarea {
 }
 
 h1,
-button {
+menu {
   font-size: 3rem;
 }
+
 a {
   text-decoration: none;
 }
-
-/*-----Padronizações de tags PAI -----*/
 
 footer {
   max-height: var(--altura-footer);
 }
 
-/*-------------HEADER---------------*/
-/*----------------------------*/
-/*----------------------------*/
+/*
+  ====================
+        HEADER
+  ====================
+  */
+
 header {
   height: var(--altura-header);
   z-index: 3;
   background: var(--cor-header);
 }
+
 .header_bloco {
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
   width: 100%;
+  align-items: center;
 }
+
 .menu_corpo {
-  width: 100%;
-  margin: 0 auto;
+  margin: 0px auto;
   max-width: 1200px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-flow: row;
   justify-content: space-around;
   width: 100%;
   height: var(--altura-menu-header);
-  border-radius: 0;
-  padding: 0;
+  border-radius: 0px;
+  padding: 0px;
   z-index: 3;
+  width: var(--comprimento-menu);
 }
+
 .nav_bloco-principal {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
   background: var(--cor-menu-normal);
 }
+
 .header_nav-button {
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out 0s;
   padding: 5px 21px;
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
   gap: 5px;
-  position: absolute;
-  top: 106px;
-  right: 2%;
 }
 
-/*MENU*/
-.header_nav-button {
+.header_nav-menu {
   background: var(--cor-botao-menu);
+  display: none;
 }
 
-.header_nav-button .line {
+.header_nav-menu .line {
   width: 28px;
   height: 4px;
-  background: #000000;
+  background: rgb(0, 0, 0);
   border-radius: 3px;
   display: block;
-  position: absolute;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out 0s;
+  position: relative;
 }
+
 .header_barras-menu {
   width: 26px;
   height: 30px;
 }
-.header_nav-button .top {
-  top: 7px;
+
+.header_nav-menu .top {
+  top: 4px;
 }
 
-.header_nav-button .middle {
-  top: 16px;
+.header_nav-menu .middle {
+  top: 9px;
 }
 
-.header_nav-button .bottom {
-  top: 25px;
+.header_nav-menu .bottom {
+  top: 14px;
 }
 
-.header_nav-button.closed .top {
+.header_nav-menu.closed .top {
   transform: translateY(9px) rotate(45deg);
 }
 
-.header_nav-button.closed .middle {
+.header_nav-menu.closed .middle {
   opacity: 0;
 }
 
-.header_nav-button.closed .bottom {
+.header_nav-menu.closed .bottom {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-.header_nav-button .label {
+.header_nav-menu .label {
   margin-left: 0px;
   vertical-align: middle;
 }
@@ -340,15 +361,16 @@ header {
 .menu_corpo > li:hover > ul {
   display: block;
   position: absolute;
-  margin: 7px -30px 0;
-  animation: subMenuAparece 2s forwards;
+  margin: 7px -30px 0px;
+  animation: 2s ease 0s 1 normal forwards running subMenuAparece;
 }
 
 @keyframes subMenuAparece {
   0% {
-    max-width: 0;
-    max-height: 0;
+    max-width: 0px;
+    max-height: 0px;
   }
+
   100% {
     max-width: 100%;
     max-height: 100%;
