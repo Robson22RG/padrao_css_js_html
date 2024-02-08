@@ -133,19 +133,22 @@
         intervalId = setInterval(nextPanel, 5000);
       });
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('.header_nav-button').click(function() {
-      $(this).toggleClass('closed');
-    });
-  });  
-</script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var navButton = document.querySelector('.header_nav-button');
+    
+        if (navButton) {
+          navButton.addEventListener('click', function() {
+            this.classList.toggle('closed');
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header id="header" class="header">
-      <div class="header_bloco fundo_01 centralizador_dispersivo">
+      <div class="header_bloco centralizador_dispersivo">
         <div class="header_logo">
           <figure>
             <a href="#">
@@ -198,11 +201,18 @@
           -->
           <!-- Início Menu -->
           <ul id="MenuNav" class="menu_corpo">
-            <li><a id="A1"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off">Home</a></li>
-            <li><a id="A2"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off ">Empresa</a></li>
-            <li><a id="A4"  href="https://www.colaMax.com.br/colaMax/" class=>Produtos</a> 
-            <li><a id="A5"  href="https://www.colaMax.com.br/colaMax/" class=>Blog</a></li>
-            <li><a id="A7"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off">Orçamento</a></li>
+            <li><a id="A1"  href="#" class="menulink_off">Home</a></li>
+            <li><a id="A2"  href="#" class="menulink_off ">Empresa</a></li>
+            <li><a id="A4"  href="#" class=>Produtos
+              <ul>
+                <li><a id="P18" href="#" class="menulink_off">Pisos para Piscinas</a></li>
+                <li><a id="P31" href="#" class="menulink_off">Pisos Atérmicos</a></li>
+                <li><a id="P32" href="#" class="menulink_off">Piso Especiais</a></li>
+                <li><a id="P56" href="#" class="menulink_off">Rodapés Atérmicos</a></li>
+              </ul>
+            </a> 
+            <li><a id="A5"  href="#" class=>Blog</a></li>
+            <li><a id="A7"  href="#" class="menulink_off">Orçamento</a></li>
           </ul>
           <!-- Fim Menu -->
         </div>

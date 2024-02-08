@@ -1,28 +1,40 @@
 /*RESET*/
 :root {
-  --cor-primaria: rgba(52, 87, 42, 0.87);
+  --cor-primaria: rgb(134, 134, 134);
   --cor-secundaria: green;
   --cor-terciaria: gray;
   --cor-quartenaria: rgb(50, 255, 221);
   --cor-fonte: black;
   --cor-fonte2: gray;
+  --cor-fonte3: rgb(61, 61, 28);
   --tam-fontes: 16px;
 
   /*header*/
-  --altura-header: 300px;
-  --cor-botao-menu: (--cor-secundaria);
-  --cor-menu-normal: (--cor-quartenaria);
-  --cor-menu-ativo: (--cor-secundaria);
-  --cor-header: (--cor-primaria);
+  /**/
+  --altura-header: 200px;
+  --cor-botao-menu: var(--cor-primaria);
+  --cor-header: var(--cor-primaria);
+  /*menu*/
+  --altura-menu-header: 3rem;
+  --cor-menu-normal: var(--cor-quartenaria);
+  --cor-menu-ativo: var(--cor-secundaria);
+  --espacamento-submenu: 5px;
+  --cor-submenu-normal: var(--cor-primaria);
+  --cor-submenu-hover: var(--cor-quartenaria);
 
   --altura-footer: 150px;
-  --cor-footer: (--cor-secundaria);
+  --cor-footer: --cor-secundaria;
 }
 * {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 62.5%;
+}
+
+ul,
+ol {
+  list-style-type: none;
 }
 
 .bloco {
@@ -209,22 +221,39 @@ footer {
 }
 
 /*-------------HEADER---------------*/
+/*----------------------------*/
+/*----------------------------*/
 header {
-  max-height: var(--altura-header);
+  height: var(--altura-header);
   z-index: 3;
+  background: var(--cor-header);
 }
-
-nav div ul {
+.header_bloco {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+.menu_corpo {
+  width: 100%;
   margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+  height: var(--altura-menu-header);
+  border-radius: 0;
+  padding: 0;
+  z-index: 3;
 }
 .nav_bloco-principal {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  background-color: var(--cor-menu-normal);
+  background: var(--cor-menu-normal);
 }
 .header_nav-button {
   cursor: pointer;
@@ -239,6 +268,7 @@ nav div ul {
   right: 2%;
 }
 
+/*MENU*/
 .header_nav-button {
   background: var(--cor-botao-menu);
 }
@@ -283,4 +313,32 @@ nav div ul {
 .header_nav-button .label {
   margin-left: 0px;
   vertical-align: middle;
+}
+
+.menu_corpo li a {
+  color: var(--cor-fonte3);
+}
+
+.menu_corpo li ul {
+  background-color: var(--cor-submenu-normal);
+  height: auto;
+  display: none;
+  border: 1px solid var(--cor-fonte3);
+  border-radius: 5%;
+  transition: width 1s, height 1s;
+}
+
+.menu_corpo li ul li:hover {
+  background-color: var(--cor-submenu-hover);
+}
+
+.menu_corpo li ul li {
+  padding: var(--espacamento-submenu);
+  border-radius: 8px;
+}
+
+.menu_corpo > li:hover > ul {
+  display: block;
+  position: absolute;
+  margin: 7px -30px 0;
 }
