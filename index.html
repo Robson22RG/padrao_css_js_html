@@ -133,6 +133,14 @@
         intervalId = setInterval(nextPanel, 5000);
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.header_nav-button').click(function() {
+      $(this).toggleClass('closed');
+    });
+  });  
+</script>
   </head>
   <body>
     <!-- Header -->
@@ -171,16 +179,35 @@
           </div>
         </div>
       </div>
-      <nav class="centralizador fundo_03">
-        <ul class="bloco centralizador_dispersivo">
-          <button><a href="">teste1</a></button>
-          <button><a href="">teste2</a></button>
-          <button><a href="">teste3</a></button>
-          <button><a href="">teste4</a></button>
-          <button><a href="">teste5</a></button>
-          <button><a href="">teste6</a></button>
-        </ul>
+      <nav>
+        <div id="nav" class="nav_bloco-principal">
+          <button class="header_nav-button">
+            <div class="header_barras-menu">
+              <span class="line top"></span>
+              <span class="line middle"></span>
+              <span class="line bottom"></span>
+            </div>
+            <span class="label">Menu</span>
+          </button>
+          
+          <!--
+          <% If vPathInfo = "/" Then Server.Execute
+          "..\..\redbit.net.br\httpdocs\includes\inc_menunav.asp" Else
+          Server.Execute
+          "..\..\..\redbit.net.br\httpdocs\includes\inc_menunav.asp" End If %>
+          -->
+          <!-- Início Menu -->
+          <ul id="MenuNav" class="menu_corpo">
+            <li><a id="A1"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off">Home</a></li>
+            <li><a id="A2"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off ">Empresa</a></li>
+            <li><a id="A4"  href="https://www.colaMax.com.br/colaMax/" class=>Produtos</a> 
+            <li><a id="A5"  href="https://www.colaMax.com.br/colaMax/" class=>Blog</a></li>
+            <li><a id="A7"  href="https://www.colaMax.com.br/colaMax/" class="menulink_off">Orçamento</a></li>
+          </ul>
+          <!-- Fim Menu -->
+        </div>
       </nav>
+    </div>
     </header>
     <!--MAIN-->
     <main class="fundo_02">

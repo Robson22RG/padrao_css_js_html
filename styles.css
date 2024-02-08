@@ -3,11 +3,20 @@
   --cor-primaria: rgba(52, 87, 42, 0.87);
   --cor-secundaria: green;
   --cor-terciaria: gray;
+  --cor-quartenaria: rgb(50, 255, 221);
   --cor-fonte: black;
   --cor-fonte2: gray;
   --tam-fontes: 16px;
-  --altura-header: 150px;
+
+  /*header*/
+  --altura-header: 300px;
+  --cor-botao-menu: (--cor-secundaria);
+  --cor-menu-normal: (--cor-quartenaria);
+  --cor-menu-ativo: (--cor-secundaria);
+  --cor-header: (--cor-primaria);
+
   --altura-footer: 150px;
+  --cor-footer: (--cor-secundaria);
 }
 * {
   margin: 0;
@@ -126,27 +135,27 @@
   transition: opacity 2s ease-in-out;
 }
 
-   .isVisible.visible {
-      animation: apareceAumenta 5s;
-      opacity: 1;
-      z-index: 2;
-    }
+.isVisible.visible {
+  animation: apareceAumenta 5s;
+  opacity: 1;
+  z-index: 2;
+}
 
-    @keyframes apareceAumenta {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-      75% {
-        transform: scale(1);
-      }
-      100% {
-        opacity: 1;
-      }
-    }
+@keyframes apareceAumenta {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*Banner rotativo*/
 /*---------------------------*/
 /*---------------------------*/
@@ -194,10 +203,84 @@ a {
 }
 
 /*-----Padronizações de tags PAI -----*/
+
+footer {
+  max-height: var(--altura-footer);
+}
+
+/*-------------HEADER---------------*/
 header {
-  max-height: var(--altura-header)
+  max-height: var(--altura-header);
   z-index: 3;
 }
-footer {
-  max-height: var(--altura-footer)
+
+nav div ul {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav_bloco-principal {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  background-color: var(--cor-menu-normal);
+}
+.header_nav-button {
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  padding: 5px 21px;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+  position: absolute;
+  top: 106px;
+  right: 2%;
+}
+
+.header_nav-button {
+  background: var(--cor-botao-menu);
+}
+
+.header_nav-button .line {
+  width: 28px;
+  height: 4px;
+  background: #000000;
+  border-radius: 3px;
+  display: block;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+.header_barras-menu {
+  width: 26px;
+  height: 30px;
+}
+.header_nav-button .top {
+  top: 7px;
+}
+
+.header_nav-button .middle {
+  top: 16px;
+}
+
+.header_nav-button .bottom {
+  top: 25px;
+}
+
+.header_nav-button.closed .top {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.header_nav-button.closed .middle {
+  opacity: 0;
+}
+
+.header_nav-button.closed .bottom {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.header_nav-button .label {
+  margin-left: 0px;
+  vertical-align: middle;
 }
