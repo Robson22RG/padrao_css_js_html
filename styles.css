@@ -319,15 +319,6 @@ header {
   color: var(--cor-fonte3);
 }
 
-.menu_corpo li ul {
-  background-color: var(--cor-submenu-normal);
-  height: auto;
-  display: none;
-  border: 1px solid var(--cor-fonte3);
-  border-radius: 5%;
-  transition: width 1s, height 1s;
-}
-
 .menu_corpo li ul li:hover {
   background-color: var(--cor-submenu-hover);
 }
@@ -337,8 +328,29 @@ header {
   border-radius: 8px;
 }
 
+.menu_corpo li ul {
+  background-color: var(--cor-submenu-normal);
+  height: auto;
+  display: none;
+  border: 1px solid var(--cor-fonte3);
+  border-radius: 5%;
+  overflow: hidden;
+}
+
 .menu_corpo > li:hover > ul {
   display: block;
   position: absolute;
   margin: 7px -30px 0;
+  animation: subMenuAparece 2s forwards;
+}
+
+@keyframes subMenuAparece {
+  0% {
+    max-width: 0;
+    max-height: 0;
+  }
+  100% {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
