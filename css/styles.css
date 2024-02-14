@@ -1,12 +1,22 @@
 @import url("https://www.redbit.com.br/css/estilos_global.css");
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato/Lato-Black.ttf");
+}
+@font-face {
+  font-family: "Open_Sans";
+  src: url("fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-Black.ttf");
+}
 
 /*
-  ====================
-        VARIAVEIS
-  ====================
+====================
+VARIAVEIS
+====================
   ====================
   ====================
   */
@@ -20,13 +30,11 @@
   --cor-fonte2: gray;
   --cor-fonte3: rgb(61, 61, 28);
   --tam-fontes: 16px;
-
   /*
   ====================
         FONTES
   ====================
   */
-
   --fonte-tipo-1: "Lato", sans-serif;
   --fonte-tipo-2: "Open Sans", sans-serif;
   --fonte-tipo-3: "Poppins", sans-serif;
@@ -37,7 +45,8 @@
   ====================
   */
   --altura-header: 200px;
-  --cor-header: var(--cor-primaria);
+  --cor-header: none;
+  --cor-header-bloco: var(--cor-primaria);
   /**/
   --cor-botao-menu: var(--cor-primaria);
   --comprimento-menu: 600px;
@@ -54,7 +63,7 @@
   ====================
   */
   --altura-footer: 300px;
-  --tamanho-footer-fonte: 1.8rem;
+  --tamanho-footer-fonte: 1.5rem;
   --cor-footer: var(--cor-secundaria);
   --footer-botao: var(--cor-primaria);
   --footer-botao-ativo: var(--cor-quartenaria);
@@ -130,6 +139,7 @@ ol {
   transition: all 0.4s ease-out 0s;
   max-height: 100px;
   width: 100%;
+  background-color: var(--cor-header-bloco);
 }
 
 .logo_header-reduzido {
@@ -143,6 +153,7 @@ ol {
   top: 0px;
   transition: transform 0.4s ease-in-out 0s;
   max-height: 100px;
+  background-color: var(--cor-header-bloco);
 }
 
 .desenvolvimento_de_efeitos {
@@ -192,6 +203,11 @@ ol {
   background: red;
 }
 
+/*
+  ====================
+        VISIBILIDADE
+  ====================
+  */
 .isVisible {
   opacity: 0;
   transition: opacity 2s ease-in-out 0s;
@@ -221,7 +237,11 @@ ol {
     opacity: 1;
   }
 }
-
+/*
+  ====================
+      Carrossel 
+  ====================
+  */
 .carousel-container {
   position: relative;
   width: 100%;
@@ -245,10 +265,45 @@ ol {
   background-color: rgb(52, 153, 42);
   color: rgb(255, 255, 255);
 }
+/*
+  ====================
+        Lightbox
+  ====================
+  */
+.lightbox-container {
+  text-align: center;
+}
 
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80%;
+  margin: 17% auto 10%;
+  display: block;
+}
+
+.close-btn {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
 /*
   ====================
         PADRÃO
+  ====================
+  ====================
   ====================
   */
 p,
@@ -264,6 +319,18 @@ menu {
   font-size: 3rem;
 }
 
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -276,12 +343,16 @@ footer {
   ====================
         HEADER
   ====================
+  ====================
+  ====================
 */
 
 header {
   height: var(--altura-header);
   z-index: 3;
   background: var(--cor-header);
+  position: absolute;
+  width: 100%;
 }
 
 .header_bloco {
@@ -399,7 +470,7 @@ header {
   display: block;
   position: absolute;
   margin: 7px -30px 0px;
-  animation: 2s ease 0s 1 normal forwards running subMenuAparece;
+  animation: 1s ease 0s 1 normal forwards running subMenuAparece;
 }
 
 @keyframes subMenuAparece {
@@ -512,11 +583,22 @@ footer form {
   color: var(--fonte-tipo-1);
   font-family: var(--fonte-tipo-1);
   font-size: var(--tamanho-footer-fonte);
+  transition: color 0.6s;
 }
 .footer_coluna-1 ul {
-  height: var(--altura-footer);
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 0 10px;
+  gap: 4px;
+}
+footer .icon,
+footer .fa {
+  padding: 10px;
+  font-size: 1.7rem;
+}
+
+footer li a:hover {
+  color: blue;
 }
