@@ -1,3 +1,16 @@
+@import url("https://www.redbit.com.br/css/estilos_global.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+
+/*
+  ====================
+        VARIAVEIS
+  ====================
+  ====================
+  ====================
+  */
+
 :root {
   --cor-primaria: rgb(134, 134, 134);
   --cor-secundaria: green;
@@ -7,6 +20,16 @@
   --cor-fonte2: gray;
   --cor-fonte3: rgb(61, 61, 28);
   --tam-fontes: 16px;
+
+  /*
+  ====================
+        FONTES
+  ====================
+  */
+
+  --fonte-tipo-1: "Lato", sans-serif;
+  --fonte-tipo-2: "Open Sans", sans-serif;
+  --fonte-tipo-3: "Poppins", sans-serif;
 
   /*
   ====================
@@ -30,10 +53,18 @@
         FOOTER
   ====================
   */
-  --altura-footer: 150px;
-  --cor-footer: --cor-secundaria;
+  --altura-footer: 300px;
+  --tamanho-footer-fonte: 1.8rem;
+  --cor-footer: var(--cor-secundaria);
+  --footer-botao: var(--cor-primaria);
+  --footer-botao-ativo: var(--cor-quartenaria);
 }
 
+/*
+  ====================
+        RESET
+  ====================
+  */
 * {
   margin: 0px;
   padding: 0px;
@@ -45,6 +76,12 @@ ul,
 ol {
   list-style-type: none;
 }
+
+/*
+  ====================
+        RESET
+  ====================
+*/
 
 .bloco {
   width: 100%;
@@ -239,7 +276,7 @@ footer {
   ====================
         HEADER
   ====================
-  */
+*/
 
 header {
   height: var(--altura-header);
@@ -375,4 +412,111 @@ header {
     max-width: 100%;
     max-height: 100%;
   }
+}
+
+/*
+  ====================
+        FOOTER
+  ====================
+  ====================
+  ====================
+*/
+footer {
+  height: var(--altura-footer);
+  background-color: var(--cor-footer);
+  padding: 10px 0 10px;
+}
+.bloco_geral-footer {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer_coluna-1,
+.footer_coluna-2,
+.footer_coluna-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_coluna-1 {
+  background-color: var(--cor-primaria);
+
+  /*
+  ====================
+        COLUNA 3
+  ====================
+*/
+}
+.footer_coluna-3 input {
+  width: 300px;
+  padding: 2px;
+  border: 1px solid gray;
+  font-size: 1.6rem;
+  border-radius: 10px;
+}
+.footer_coluna-3 textarea {
+  width: 300px;
+  padding: 2px;
+  border: 1px solid gray;
+  font-size: 1.6rem;
+  border-radius: 10px;
+}
+footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.barra_footer-mensagem {
+  width: 300px;
+  height: 0.2rem;
+  background-color: var(--cor-primaria);
+  margin: 10px 0;
+}
+.titulo_mensagem {
+  margin: 0 auto;
+  width: 210px;
+}
+
+.footer_coluna-3 input,
+.footer_coluna-3 textarea {
+  padding: 2px 5px 2px 10px;
+  color: var(--cor-fonte);
+  font-family: var(--fonte-tipo-1);
+}
+.form_mini_submit {
+  width: 80px !important;
+  margin: 10px 0 0 0;
+  background: var(--footer-botao);
+  transition: background 0.5s;
+  cursor: pointer;
+}
+.form_mini_submit:hover {
+  background-color: var(--footer-botao-ativo);
+}
+/*
+  ====================
+        COLUNA 2
+  ====================
+*/
+.footer_coluna-2 {
+  align-items: center;
+  margin: 6% 0 0;
+}
+/*
+  ====================
+        COLUNA 1
+  ====================
+*/
+.footer_coluna-1 a {
+  color: var(--fonte-tipo-1);
+  font-family: var(--fonte-tipo-1);
+  font-size: var(--tamanho-footer-fonte);
+}
+.footer_coluna-1 ul {
+  height: var(--altura-footer);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 10px;
 }
