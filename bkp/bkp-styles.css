@@ -28,7 +28,7 @@ VARIAVEIS
   --cor-quartenaria: rgb(50, 255, 221);
   --cor-fonte: black;
   --cor-fonte2: gray;
-  --cor-fonte3: rgb(245, 245, 14);
+  --cor-fonte3: rgb(61, 61, 28);
   --tam-fontes: 16px;
   /*
   ====================
@@ -44,7 +44,7 @@ VARIAVEIS
         HEADER
   ====================
   */
-  --altura-header: auto;
+  --altura-header: 200px;
   --cor-header: none;
   --cor-header-bloco: var(--cor-primaria);
   /**/
@@ -140,11 +140,6 @@ ol {
   max-height: 100px;
   width: 100%;
   background-color: var(--cor-header-bloco);
-}
-
-.nav_sem-vidro {
-  border: none !important;
-  backdrop-filter: none !important;
 }
 
 .logo_header-reduzido {
@@ -360,10 +355,6 @@ header {
   width: 100%;
 }
 
-header nav {
-  margin-top: 10px;
-}
-
 .header_bloco {
   display: flex;
   justify-content: space-between;
@@ -391,11 +382,7 @@ header nav {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  padding: 16px;
-  border-radius: 40px;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: #ffffff54 0px 1px 3px 1px inset;
+  background: var(--cor-menu-normal);
 }
 
 .header_nav-button {

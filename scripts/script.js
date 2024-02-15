@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const header = document.querySelector("header");
   const logo = document.querySelector("#header_logo-img");
+  const menuHeader = document.querySelector(".nav_bloco-principal");
 
   window.addEventListener("scroll", () => {
     const currentScrollPosition = window.scrollY;
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.add("header_slide-in");
       header.classList.remove("header_slide-out");
       logo.classList.add("logo_header-reduzido");
+      menuHeader.classList.add("nav_sem-vidro");
       /*----------*/
     } else if (
       currentScrollPosition > lastScrollPosition &&
@@ -33,16 +35,19 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.remove("header_slide-in");
       header.classList.add("header_slide-out");
       logo.classList.add("logo_header-reduzido");
+      menuHeader.classList.add("nav_sem-vidro");
       /*----------*/
     } else if (currentScrollPosition > 300) {
       /*situação de ajuste de header para volta */
       logo.classList.add("logo_header-reduzido");
+      menuHeader.classList.add("nav_sem-vidro");
       /*------------*/
     } else {
       /* Tela lá em cima */
       header.classList.remove("header_slide-in");
       logo.classList.remove("logo_header-reduzido");
       header.classList.remove("header_slide-in");
+      menuHeader.classList.remove("nav_sem-vidro");
       /*----------*/
     }
     /* Passando valor */

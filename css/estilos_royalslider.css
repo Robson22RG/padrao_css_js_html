@@ -190,3 +190,6 @@ img.rsImg {
   background: #c3c3c3 !important;
   width: 100% !important;
 }
+.rsOverflow {
+  height: 100% !important;
+}
